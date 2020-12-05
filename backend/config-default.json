@@ -1,0 +1,15 @@
+{
+    "db" : {
+        "host": "localhost",
+        "port": 27017,
+        "name": "hackathon"
+    },
+    "http": {
+        "port": 3000,
+        "host": "0.0.0.0",
+        "external": "localhost"
+    },
+    "crypt": {
+        "secret": "R3$0!vHj"
+    }
+}
