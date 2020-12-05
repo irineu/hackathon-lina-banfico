@@ -1,11 +1,73 @@
 <div class="background">
   <div class="layer"></div>
 </div>
-<div class="main">
-  <div class="header">
-    <div class="logo">
-      <img src="../assets/resolve-hj.svg" />
-    </div>
-  </div>
-  <router-outlet></router-outlet>
+
+<div class="loader" *ngIf="!loaded">
+
+  <mat-progress-spinner
+  color="warn"
+  mode="determinate"
+  [value]="progress">
+  </mat-progress-spinner>
 </div>
+
+<div class="main" *ngIf="loaded">
+
+  <mat-drawer-container class="drawer-container" autosize [hasBackdrop]="true">
+    <mat-drawer #drawer class="sidenav" mode="over" position="end">
+      <p>Auto-resizing sidenav</p>
+      <p *ngIf="showFiller">Lorem, ipsum dolor sit amet consectetur.</p>
+      <button (click)="showFiller = !showFiller" mat-raised-button>
+        Toggle extra text
+      </button>
+    </mat-drawer>
+  
+    <div class="header">
+      <div class="logo">
+        <img src="../assets/resolve-hj.svg" />
+      </div>
+      <div class="mid">
+        <h2>Ol&aacute; {{appData.user.firstName}} {{appData.user.lastName}}</h2>
+      </div>
+      <div style="text-align: right; padding: 10px">
+        <button mat-icon-button color="basic" (click)="drawer.toggle()" style="color: #FFF">
+          <mat-icon>menu</mat-icon>
+        </button>
+      </div>
+    </div>
+  
+    <router-outlet></router-outlet>
+  
+  </mat-drawer-container>
+</div>
+
+<!--
+<mat-drawer-container class="example-container" autosize>
+  <mat-drawer #drawer class="example-sidenav" mode="side">
+    <p>Auto-resizing sidenav</p>
+    <p *ngIf="showFiller">Lorem, ipsum dolor sit amet consectetur.</p>
+    <button (click)="showFiller = !showFiller" mat-raised-button>
+      Toggle extra text
+    </button>
+  </mat-drawer>
+
+  <div class="main" *ngIf="loaded">
+    <div class="header">
+      <div class="logo">
+        <img src="../assets/resolve-hj.svg" />
+      </div>
+      <div class="mid">
+        <h2>Ol&aacute; {{appData.user.firstName}} {{appData.user.lastName}}</h2>
+      </div>
+      <div>
+        <button type="button" mat-button (click)="drawer.toggle()">
+          Toggle sidenav
+        </button>
+      </div>
+    </div>
+  
+    <router-outlet></router-outlet>
+  </div>
+
+</mat-drawer-container>
+-->

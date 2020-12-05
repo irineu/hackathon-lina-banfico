@@ -8,6 +8,7 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatInputModule } from '@angular/material/input';
+import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatFormFieldModule} from '@angular/material/form-field';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -33,6 +34,7 @@ import { httpInterceptorProviders } from './interceptors';
     MatDividerModule,
     MatFormFieldModule,
     MatInputModule,
+    MatSidenavModule
   ],
   providers: [
     httpInterceptorProviders,

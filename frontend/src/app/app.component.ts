@@ -22,6 +22,7 @@ export class AppComponent implements OnInit {
 
   constructor(private http: HttpClient, public appData: AppDataService) { }
 
+  loaded: boolean = false;
   progress = 5;
 
   ngOnInit(): void {
@@ -35,11 +36,11 @@ export class AppComponent implements OnInit {
         }, (e) => {
           console.log(e);
           console.error('not logged in')
-          //window.location.href = "../login"
+          window.location.href = "../login"
       }); 
     }else{
       console.error('not logged in')
-      //window.location.href = "../login"
+      window.location.href = "../login"
     }
   }
 
@@ -47,10 +48,12 @@ export class AppComponent implements OnInit {
     this.appData.loadUser().subscribe(
       (result) => {
         
-        this.progress = 60;
+        this.progress = 100;
         
-        //alert('done');
-
+        setTimeout(() => {
+          this.loaded = true;
+        },500);
+        
       }, (e) => {
         console.log(e);
     }); 

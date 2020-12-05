@@ -5,6 +5,10 @@
         to { width: 100vw; height: 100vw; border-radius: 0}
     }
 
+    .drawer-container{
+        height: 100vh;
+    }
+
     div.background{
         position: absolute;
         z-index: -1;
@@ -22,11 +26,28 @@
         }
     }
 
+    div.loader{
+        padding: 15px;
+    }
+
     div.main{
+
+        .mat-drawer-container{
+            background-color: transparent;
+        }
 
         div.header{
             display: grid;
-            grid-template-columns: 20vw auto 50vw;
+            grid-template-columns: 20vw auto 20vw;
+        }
+
+        div.mid{
+            color: #FFF;
+            position: relative;
+            h2{
+                margin: 2rem;
+                font-size: 2rem;
+            }
         }
     }
 
