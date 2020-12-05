@@ -31,7 +31,7 @@ const sendMail =  async (toAddr, htmlMessage, txtMessage, subject) => {
                 Data: subject
             }
         },
-        Source: 'irineu@casahightech.com',
+        Source: 'irineu@irineuantunes.com',
         ReplyToAddresses: [
             //'EMAIL_ADDRESS',
             /* more items */
