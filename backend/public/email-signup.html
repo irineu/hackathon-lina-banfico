@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        * {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 14px;
+            color: #757575;
+        }
+
+        body{
+            margin: 0;
+        }
+
+        body > table {
+            padding: 30px 0;
+        }
+        
+
+        button, a.button{
+            border: 0;
+            color: #FFF;
+            background-color: #000;
+            border-radius: 25px;
+            padding: 15px 40px;
+            font-weight: bold;
+        }
+
+        h1{
+            font-size: 20px;
+        }
+
+        tr.footer{
+            background-color: rgba(0,0,0,.80);
+        }
+
+         tr.footer * {
+            color: #FFF !important; 
+         }
+
+         @media only screen and (max-width: 640px) {
+            table.main{
+                width: 100%;
+            }
+         }
+
+    </style>
+</head>
+<body bgcolor="#EEE">
+
+<table width="100%" style="background-color: #EEE; background: url('http://www.casahightech.com.br/images/cht-bg2.jpg'); background-size: cover;" cellspacing="0" cellpadding="0" border="0">
+    <tr>
+        <td>
+            <table class="main" width="640" align="center" border="0" cellspacing="0" cellpadding="20" style="background-color: rgba(255,255,255,.75)">
+                <tr class="logo">
+                    <td>
+                        <table width="100%">
+                            <tr>
+                                <td width="130">
+                                    <img src="http://www.casahightech.com.br/images/logo.jpg" />
+                                </td>
+                                <td align="left">
+                                    <span style="vertical-align: middle;font-size: 25px; font-weight:bold;color: #000 ">Ol&aacute; seja bem vindo</span>
+                                    <br>
+                                    <span style="vertical-align: middle;font-size: 25px; font-weight:lighter;">{{firstname}}</span>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <h1>Verificar email</h1>
+                        <p>
+                            Resta um &uacute;ltimo passo para iniciar seu acesso ao CasaHighTech!
+                        Clique no bot&atilde;o abaixo para confirmar seu email:
+                        </p>
+                        
+                        <br/>
+                        <center><a class="button" href="{{url}}" target="_blank">Confirmar email</a></center>
+                        <br/>
+                        
+                        Ou copie e cole o link abaixo no seu navegador:
+                        <br/>
+                        <p>
+                            <a>{{url}}</a>
+                        </p>
+                        <br/>
+
+                        <hr/>
+
+                        <p>Se voc&ecirc; n&atilde;o &eacute; {{fullname}} ou n&atilde;o se cadastrou no site CasaHighTech, <a href="#">clique aqui</a></p>
+                        <p>Para saber mais sobre nossos termos de uso <a href="#">clique aqui</a></p>
+                    </td>
+                </tr>
+                <tr class="footer">
+                    <td>
+                        Este e-mail foi enviado pela CasaHighTech
+                        <br/>
+                        Uma ferramenta da Hexalotus
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+
+    
+</body>
+</html>

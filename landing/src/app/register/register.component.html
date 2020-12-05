@@ -1,0 +1,179 @@
+<div class="main">
+
+    <div class="wellcome">
+        <h3>Criar uma conta</h3>
+        <br/>
+        <ul class="steps">
+            <li [ngClass] = "{active: step >= 1}">1</li>
+            <li [ngClass] = "{active: step >= 2}">2</li>
+            <li [ngClass] = "{active: step >= 3}">3</li>
+            <li [ngClass] = "{active: step >= 4}">4</li>
+            <li [ngClass] = "{active: step >= 5}">5</li>
+        </ul>
+    </div>
+
+    <br/>
+    <div class="form">
+
+        <div id="step1" *ngIf="step == 1">
+            <div>
+                <input type="text" id="txtEmail" placeholder="Email" [(ngModel)]="username" [ngClass]="{error: getErrorField('username')}" (keyup)="clearErrors()"/>
+                <span *ngIf="getErrorField('username')" class="error">{{getErrorMessage('username')}}</span>
+            </div>
+            
+            <br/>
+            <button (click)="checkMail()">Avan&ccedil;ar</button>
+        </div>
+
+        <div id="step2" *ngIf="step == 2">
+            <div>
+                <input type="text" id="txtFirstName" placeholder="Primeiro nome" [(ngModel)]="firstName" [ngClass]="{error: getErrorField('firstName')}" (keyup)="clearErrors()"/>
+                <span *ngIf="getErrorField('firstName')" class="error">{{getErrorMessage('firstName')}}</span>
+            </div>
+    
+            <div>
+                <input type="text" id="txtLastName" placeholder="Sobrenome" [(ngModel)]="lastName" [ngClass]="{error: getErrorField('lastName')}" (keyup)="clearErrors()"/>
+                <span *ngIf="getErrorField('lastName')" class="error">{{getErrorMessage('lastName')}}</span>
+            </div>
+    
+            <div>
+                <input type="text" id="txtBirthDate" placeholder="Data Nasc" [(ngModel)]="birthDate" [ngClass]="{error: getErrorField('birthDate')}" (keyup)="clearErrors()" onfocus="(this.type='date')" onblur="(this.type='text')"/>
+                <span *ngIf="getErrorField('birthDate')" class="error">{{getErrorMessage('birthDate')}}</span>
+            </div>
+    
+            <div>
+                <input type="text" id="txtGenre" placeholder="Genero" [(ngModel)]="genre" [ngClass]="{error: getErrorField('genre')}" (keyup)="clearErrors()"/>
+                <span *ngIf="getErrorField('genre')" class="error">{{getErrorMessage('genre')}}</span>
+            </div>
+
+            <br/>
+            <button (click)="checkPersonal()">Avan&ccedil;ar</button>
+        </div>
+
+        <div id="step3" *ngIf="step == 3">
+            <div>
+                <input type="text" id="txtPhone" placeholder="Telefone" [(ngModel)]="phone" [ngClass]="{error: getErrorField('contact_phone')}" (keyup)="clearErrors()"/>
+                <span *ngIf="getErrorField('contact_phone')" class="error">{{getErrorMessage('contact_phone')}}</span>
+            </div>
+    
+            <div>
+                <input type="text" id="txtMobilePhone" placeholder="Celular" [(ngModel)]="mobilePhone" [ngClass]="{error: getErrorField('contact_mobilePhone')}" (keyup)="clearErrors()"/>
+                <span *ngIf="getErrorField('contact_mobilePhone')" class="error">{{getErrorMessage('contact_mobilePhone')}}</span>
+            </div>
+
+            <br/>
+            <button (click)="checkPhone()">Avan&ccedil;ar</button>
+        </div>
+
+        <div id="step4" *ngIf="step == 4">
+            <div>
+                <input type="text" id="txtCity" placeholder="Cidade" [(ngModel)]="city" [ngClass]="{error: getErrorField('address_city')}" (keyup)="clearErrors()"/>
+                <span *ngIf="getErrorField('address_city')" class="error">{{getErrorMessage('address_city')}}</span>
+            </div>
+    
+            <div>
+                <select id="estado" name="estado" [(ngModel)]="state" [ngClass]="{error: getErrorField('address_state')}">
+                    <option value="" disabled>Selecione o estado</option>
+                    <option value="AC">Acre</option>
+                    <option value="AL">Alagoas</option>
+                    <option value="AP">Amapá</option>
+                    <option value="AM">Amazonas</option>
+                    <option value="BA">Bahia</option>
+                    <option value="CE">Ceará</option>
+                    <option value="DF">Distrito Federal</option>
+                    <option value="ES">Espírito Santo</option>
+                    <option value="GO">Goiás</option>
+                    <option value="MA">Maranhão</option>
+                    <option value="MT">Mato Grosso</option>
+                    <option value="MS">Mato Grosso do Sul</option>
+                    <option value="MG">Minas Gerais</option>
+                    <option value="PA">Pará</option>
+                    <option value="PB">Paraíba</option>
+                    <option value="PR">Paraná</option>
+                    <option value="PE">Pernambuco</option>
+                    <option value="PI">Piauí</option>
+                    <option value="RJ">Rio de Janeiro</option>
+                    <option value="RN">Rio Grande do Norte</option>
+                    <option value="RS">Rio Grande do Sul</option>
+                    <option value="RO">Rondônia</option>
+                    <option value="RR">Roraima</option>
+                    <option value="SC">Santa Catarina</option>
+                    <option value="SP">São Paulo</option>
+                    <option value="SE">Sergipe</option>
+                    <option value="TO">Tocantins</option>
+                    <option value="EX">Estrangeiro</option>
+                </select>
+                
+                <span *ngIf="getErrorField('address_state')" class="error">{{getErrorMessage('address_state')}}</span>
+            </div>
+    
+            <div>
+                <input type="text" id="txtAddressLine1" placeholder="Endere&ccedil;o" [(ngModel)]="addressLine1" [ngClass]="{error: getErrorField('address_addressLine1')}" (keyup)="clearErrors()"/>
+                <span *ngIf="getErrorField('address_addressLine1')" class="error">{{getErrorMessage('address_addressLine1')}}</span>
+            </div>
+
+            <div>
+                <input type="text" id="txtAddressLine2" placeholder="Complemento" [(ngModel)]="addressLine2" [ngClass]="{error: getErrorField('address_addressLine2')}" (keyup)="clearErrors()"/>
+                <span *ngIf="getErrorField('address_addressLine2')" class="error">{{getErrorMessage('address_addressLine2')}}</span>
+            </div>
+    
+            <div>
+                <input type="text" id="txtZip" placeholder="CEP" [(ngModel)]="zip" [ngClass]="{error: getErrorField('address_zip')}" (keyup)="clearErrors()"/>
+                <span *ngIf="getErrorField('address_zip')" class="error">{{getErrorMessage('address_zip')}}</span>
+            </div>
+
+            <br/>
+            <button (click)="checkAddress()">Avan&ccedil;ar</button>
+        </div>
+
+        <div id="step5" *ngIf="step == 5">
+            <div>
+                <input type="password" id="txtPassword" placeholder="Senha" [(ngModel)]="password" [ngClass]="{error: getErrorField('password')}" (keyup)="clearErrors()"/>
+                <span *ngIf="getErrorField('password')" class="error">{{getErrorMessage('password')}}</span>
+            </div>
+    
+            <div>
+                <input type="password" id="txtRetypePassword" placeholder="Repita a Senha" [(ngModel)]="retypePassword" [ngClass]="{error: getErrorField('retypePassword')}" (keyup)="clearErrors()"/>
+                <span *ngIf="getErrorField('retypePassword')" class="error">{{getErrorMessage('retypePassword')}}</span>
+            </div>
+    
+            <div>
+                <select id="question" name="question" placeholder="Pergunta Secreta" [(ngModel)]="secretQuestion" [ngClass]="{error: getErrorField('secretQuestion')}">
+                    <option value="" disabled>Selecione uma pergunta</option>
+                    <option value="question-1">Qual o nome do seu animal de estimacao?</option>
+                    <option value="question-2">Qual a cidade em que voce nasceu?</option>
+                    <option value="question-3">Qual o nome seu desenho favorito?</option>
+                    <option value="question-4">Qual a sua cor favorita?</option>
+                </select>
+            
+                <span *ngIf="getErrorField('secretQuestion')" class="error">{{getErrorMessage('secretQuestion')}}</span>
+            </div>
+    
+            <div>
+                <input type="text" id="txtSecretAnswer" placeholder="Resposta Secreta" [(ngModel)]="secretAnswer" [ngClass]="{error: getErrorField('secretAnswer')}" (keyup)="clearErrors()"/>
+                <span *ngIf="getErrorField('secretAnswer')" class="error">{{getErrorMessage('secretAnswer')}}</span>
+            </div>
+
+            <br/>
+            <button (click)="signup()">Cadastrar</button>
+        </div>
+
+       <!-- <div>
+            <input type="password" id="txtPassword" placeholder="Senha" [(ngModel)]="password" [ngClass]="{error: getErrorField('password')}" (keyup)="clearErrors()"/>
+            <span *ngIf="getErrorField('password')" class="error">{{getErrorMessage('password')}}</span>
+        </div>
+        <div >
+            <input type="checkbox" [(ngModel)]="remember"/> Lembrar minha senha
+        </div>
+        <br/>
+
+        -->
+        
+        <br/><br/>
+        <div class="links">
+            <a routerLink="/login">Fazer Login</a> | <a routerLink="/forgot-password">Esqueci minha senha</a>
+        </div>
+    </div>
+    
+
+</div>

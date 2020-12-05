@@ -1,0 +1,299 @@
+
+:host{
+    font-family: 'Oswald', sans-serif;
+    background-image: url('../../assets/background.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: right;
+    height: 85vh;
+
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+    font-family: 'Oswald', sans-serif;
+    
+    div.main{
+        padding: 3rem;
+        background-color: #FFF;
+        color: #333;
+
+        div.wellcome{
+            h3{
+                
+                font-size: 1.5rem;
+                font-weight: bold;
+            }
+        }
+
+        ul.steps{
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+
+            li{
+                display: inline-block;
+                color: #333;
+                font-weight: bold;
+                height:.9rem;
+                width: .9rem;
+                padding: 0.5rem;
+                border: 1px solid #333;
+                border-radius: 2rem;
+                font-size: 0.75rem;
+                text-align: center;
+                vertical-align: middle;
+                line-height: .9rem;
+                margin: 0 .5rem;
+
+                &.active{
+                    background-color: #333;
+                    color: #fff;
+                }
+            }
+        }
+
+        button{
+            background-color: red;
+            color: #FFF;
+            text-transform: uppercase;
+            border: none;
+            width: 100%;
+            padding: 0.6rem;
+        }
+
+        div.form{
+         
+            > div {
+                position: relative;
+            }
+
+            select{
+                width: 20vw;
+                box-sizing: border-box;
+                border: 1px solid #BBB;
+                background-color: #EEE;
+                padding: .5rem;
+                margin: .5rem 0;
+                position: relative;
+    
+                &.error{
+                    border: 1px solid red;
+                    color: red;
+                    margin: .5rem 0 .75rem;
+                }
+            }
+        
+            input{
+                width: 20vw;
+                box-sizing: border-box;
+    
+                &[type="checkbox"]{
+                    display: inline-block;
+                    width: auto;
+                }
+    
+    
+                &[type="text"],&[type="password"], &[type="date"]{
+                    border: 1px solid #EEE;
+                    background-color: #FFF;
+                    padding: .5rem;
+                    margin: .5rem 0;
+                    position: relative;
+                }
+    
+                &.error{
+                    border: 1px solid red;
+                    color: red;
+                    margin: .5rem 0 .75rem;
+                }
+            }
+    
+            .success{
+                color: green;
+            }
+    
+            span.error{
+                color: red;
+                font-size: .75rem;
+                position: absolute;
+                right: 0;
+                top: 2.4rem;
+            }
+        
+        }
+        
+    }
+}
+
+
+/*div.main{
+    width: 85vw;
+    //height: 62vh;
+    min-height: 25rem;
+    background-color: #EEE;
+    //margin: 2rem;
+    box-sizing: border-box;
+    padding: 2rem;
+    box-shadow: 0.15rem 0.15rem 10px rgba(0,0,0,.25);
+    border: 1px solid #FFF;
+
+    div.wellcome{
+        text-align: center;
+
+        h3{
+            color: #333;
+            font-size: 1.5rem;
+        }
+
+        > p {
+            color: #111;
+            text-transform: none;
+            font-size: 0.85rem;
+        }
+
+        *{
+            margin: 0;
+        }
+
+        ul.steps{
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+
+            li{
+                display: inline-block;
+                color: #333;
+                font-weight: bold;
+                height:.9rem;
+                width: .9rem;
+                padding: 0.5rem;
+                border: 1px solid #333;
+                border-radius: 2rem;
+                font-size: 0.75rem;
+                text-align: center;
+                vertical-align: middle;
+                line-height: .9rem;
+                margin: 0 .5rem;
+
+                &.active{
+                    background-color: #333;
+                    color: #fff;
+                }
+            }
+        }
+    }
+
+    div.form{
+         
+        > div {
+            position: relative;
+        }
+
+        select{
+            width: 100%;
+            box-sizing: border-box;
+            border: 1px solid #BBB;
+            background-color: #EEE;
+            padding: .5rem;
+            margin: .5rem 0;
+            position: relative;
+
+            &.error{
+                border: 1px solid red;
+                color: red;
+                margin: .5rem 0 .75rem;
+            }
+        }
+
+        input{
+            width: 100%;
+            box-sizing: border-box;
+
+            &[type="checkbox"]{
+                display: inline-block;
+                width: auto;
+            }
+
+
+            &[type="text"],&[type="password"], &[type="date"]{
+                border: 1px solid #BBB;
+                background-color: #EEE;
+                padding: .5rem;
+                margin: .5rem 0;
+                position: relative;
+            }
+
+            &.error{
+                border: 1px solid red;
+                color: red;
+                margin: .5rem 0 .75rem;
+            }
+        }
+
+        .success{
+            color: green;
+        }
+
+        span.error{
+            color: red;
+            font-size: .75rem;
+            position: absolute;
+            right: 0;
+            top: 2.4rem;
+        }
+    }
+
+    button{
+        background-color: #000;
+        color: #FFF;
+        text-transform: uppercase;
+        border: none;
+        width: 100%;
+        padding: 0.6rem;
+        border-radius: 2rem;;
+    }
+    
+    .logo{
+        width: 20vw;
+        height: 20vw;
+        padding: 1rem 1rem .5rem 1rem;
+        border: .2em solid #FFF;
+        background: #000;
+        margin: 0 auto;
+
+        img{
+            width: 100%;
+        }
+    }
+
+    div.links{
+        font-size: .75rem;
+        color: #777;
+        font-weight: bold;
+        text-align: center;
+
+        a:active, a:visited{
+            text-decoration: none;
+        }
+    }
+    
+
+    @media only screen and (orientation: landscape) {
+        .logo{
+            height: 2.75rem;
+            width: 2.75rem;
+            padding: .75rem .75rem .25rem .75rem;
+        }
+
+        div.form{
+            width: 20vw;
+            margin: 0px auto;
+        }
+
+        width: 25vw;
+    }
+}
+*/

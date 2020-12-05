@@ -1,0 +1,32 @@
+<div class="main">
+
+    <div class="wellcome">
+        <h3>Bem vindo</h3>
+        <span>Entre com sua conta:</span>
+    </div>
+
+    <br/>
+    <div class="form">
+        <div>
+            <input type="text" id="txtEmail" placeholder="Usuario" [(ngModel)]="username" [ngClass]="{error: getErrorField('username')}" (keyup)="clearErrors()"/>
+            <span *ngIf="getErrorField('username')" class="error">{{getErrorMessage('username')}}</span>
+        </div>
+        <div>
+            <input type="password" id="txtPassword" placeholder="Senha" [(ngModel)]="password" [ngClass]="{error: getErrorField('password')}" (keyup)="clearErrors()"/>
+            <span *ngIf="getErrorField('password')" class="error">{{getErrorMessage('password')}}</span>
+        </div>
+        <div >
+            <input type="checkbox" [(ngModel)]="remember"/> Lembrar minha senha
+        </div>
+        <br/>
+
+        <button (click)="doLogin()">Entrar</button>
+        
+        <br/><br/>
+        <div class="links">
+            <a routerLink="/register">Criar uma conta</a> | <a routerLink="/forgot-password">Esqueci minha senha</a>
+        </div>
+    </div>
+    
+
+</div>
