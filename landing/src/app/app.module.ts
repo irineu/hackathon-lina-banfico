@@ -30,7 +30,6 @@ import { ForgotPasswordComponent } from './forgot-password/forgot-password.compo
     HttpClientModule,
     FormsModule,
   ],
-  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
