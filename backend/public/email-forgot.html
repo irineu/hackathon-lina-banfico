@@ -25,8 +25,7 @@
         button, a.button{
             border: 0;
             color: #FFF;
-            background-color: #000;
-            border-radius: 25px;
+            background-color: red;
             padding: 15px 40px;
             font-weight: bold;
         }
@@ -35,11 +34,11 @@
             font-size: 20px;
         }
 
-        tr.footer{
-            background-color: rgba(0,0,0,.80);
+        tr.footer, tr.header{
+            background-color: rgba(248,3,3,1);
         }
 
-         tr.footer * {
+         tr.footer *,  tr.header {
             color: #FFF !important; 
          }
 
@@ -57,17 +56,18 @@
     <tr>
         <td>
             <table class="main" width="640" align="center" border="0" cellspacing="0" cellpadding="20" style="background-color: rgba(255,255,255,.75)">
-                <tr class="logo">
+                
+                <tr class="header">
                     <td>
                         <table width="100%">
                             <tr>
-                                <td width="130">
-                                    <img src="http://52.86.184.163/images/resolve-hj.png" />
+                                <td >
+                                    <img src="http://52.86.184.163/images/resolve-hj.png" width="200" />
                                 </td>
                                 <td align="left">
-                                    <span style="vertical-align: middle;font-size: 25px; font-weight:bold;color: #000 ">Ol&aacute; novamente</span>
+                                    <span style="vertical-align: middle;font-size: 25px; font-weight:bold;color: #FFF">Ol&aacute; seja bem vindo</span>
                                     <br>
-                                    <span style="vertical-align: middle;font-size: 25px; font-weight:lighter;">{{firstname}}</span>
+                                    <span style="vertical-align: middle;font-size: 25px; font-weight:lighter;color: #eee">{{firstname}}</span>
                                 </td>
                             </tr>
                         </table>
