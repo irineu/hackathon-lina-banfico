@@ -15,11 +15,9 @@
 
   <mat-drawer-container class="drawer-container" autosize [hasBackdrop]="true">
     <mat-drawer #drawer class="sidenav" mode="over" position="end">
-      <p>Auto-resizing sidenav</p>
-      <p *ngIf="showFiller">Lorem, ipsum dolor sit amet consectetur.</p>
-      <button (click)="showFiller = !showFiller" mat-raised-button>
-        Toggle extra text
-      </button>
+      <div class="main-menu">
+        <button mat-flat-button (click)="logout()" >Logout</button>
+      </div>
     </mat-drawer>
   
     <div class="header">

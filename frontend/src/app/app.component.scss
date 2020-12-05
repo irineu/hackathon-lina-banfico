@@ -34,6 +34,15 @@
 
         .mat-drawer-container{
             background-color: transparent;
+
+            .main-menu{
+                padding: 2rem;;
+                width: 20vw;
+
+                button{
+                    width: 100%;
+                }
+            }
         }
 
         div.header{
@@ -50,6 +59,4 @@
             }
         }
     }
-
-    
 }

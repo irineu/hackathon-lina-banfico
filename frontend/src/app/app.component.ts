@@ -58,4 +58,10 @@ export class AppComponent implements OnInit {
         console.log(e);
     }); 
   }
+
+  logout(){
+    window.localStorage.removeItem('token');
+    window.sessionStorage.removeItem('token');
+    window.location.reload();
+  }
 }
