@@ -4,7 +4,8 @@ const schema = mongoose.model('UserAccount', {
     username: String,
 
     secret: { type: mongoose.Schema.Types.ObjectId, ref: 'UserAccountSecret' },
-    
+    banks: [{ type: mongoose.Schema.Types.ObjectId, ref: 'BankAccount' }],
+
     firstName: String,
     lastName: String,
     birthDate: Date,

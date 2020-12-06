@@ -1,0 +1,36 @@
+<div class="nav-header" style="background-image: url('../../assets/background2.jpg'); height: 35vh">
+    <h1>Credito para tornar sonhos em realidade</h1>
+</div>
+
+<div class="page">
+    <h3>Calculamos o melhor valor com base nas suas finacas</h3>
+
+    <div class="history">
+        <div>
+            <p>Com base no seu saldo bancario:</p>
+    <mat-icon aria-hidden="false" inline="true" class="money">attach_money</mat-icon> <span class="money">{{appData.bankAccounts[0].lastBalance | number : '.2-2'}}</span>
+        </div>
+        <div>
+            <p>E sua medica de capital de entrada:</p>
+            <mat-icon aria-hidden="false" inline="true" class="money">attach_money</mat-icon> <span class="money">{{appData.bankAccounts[0].inMedia | number : '.2-2'}}</span>
+        </div>
+    </div>
+    
+    
+    <br/><br/><br/>
+    <p>De Quanto voce precisa?</p>
+    <mat-icon aria-hidden="false" inline="true" class="money">attach_money</mat-icon> <span class="money">{{howMuch | number : '.2-2' }}</span>
+    <br/><br/>
+    <input type="range" min="{{getMin()}}" max="{{getMax()}}" [(ngModel)]="howMuch" class="slider" id="myRange">
+    <br>
+    <br/><br/>
+    <p>Como voce quer pagar?</p>
+    <span class="money">{{parcels}} x {{ (howMuch * (1 + getTax())) / parcels | number : '.2-2' }}</span>
+    <br/>
+    <br/>
+    <input type="range" min="1" max="36" [(ngModel)]="parcels" class="slider" id="myRange">
+    <br>
+    <span class="juros">Juros: {{100 * getTax() | number : '.2-2'}} a.m</span>
+    <br><br><br>
+    <button >Contratar</button>
+</div>

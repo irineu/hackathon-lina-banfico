@@ -11,12 +11,21 @@ export class AppDataService {
   constructor(private http: HttpClient) { }
 
   public user: any;
+  public bankAccounts: any;
 
   loadUser(){
     return this.http.get(`${environment.apiUrl}/services/user`).pipe(
       map(result => {
         console.log('Loading User')
         this.user = result;
+        return result;
+      }));
+  }
+
+  loadBank(){
+    return this.http.get(`${environment.apiUrl}/services/bank`).pipe(
+      map(result => {
+        this.bankAccounts = result;
         return result;
       }));
   }
