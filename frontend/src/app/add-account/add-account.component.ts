@@ -25,7 +25,7 @@ export class AddAccountComponent implements OnInit {
     this.http.post(`${environment.apiUrl}/services/bank`, {cc: this.cc}).subscribe(
       (result) => {
         alert("Conta Cadastrada com sucesso!");
-        this.router.navigate(['/get-credit', { }]);
+        window.location.reload();
       }, (e) => {
         console.log(e);
         switch(e.status){
