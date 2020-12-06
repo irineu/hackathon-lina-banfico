@@ -12,6 +12,7 @@ import { ResetPasswordComponent } from './reset-password/reset-password.componen
 import { UnblockAccountComponent } from './unblock-account/unblock-account.component';
 import { ActivateAccountComponent } from './activate-account/activate-account.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
+import { ConhecaComponent } from './conheca/conheca.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { ForgotPasswordComponent } from './forgot-password/forgot-password.compo
     ResetPasswordComponent,
     UnblockAccountComponent,
     ActivateAccountComponent,
-    ForgotPasswordComponent
+    ForgotPasswordComponent,
+    ConhecaComponent
   ],
   imports: [
     BrowserModule,

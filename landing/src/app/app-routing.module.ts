@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { RegisterComponent} from './register/register.component';
+import { ConhecaComponent} from './conheca/conheca.component';
 import { ForgotPasswordComponent} from './forgot-password/forgot-password.component';
 import { ActivateAccountComponent} from './activate-account/activate-account.component';
 import { LoginComponent} from './login/login.component';
@@ -9,7 +10,9 @@ import { ResetPasswordComponent } from './reset-password/reset-password.componen
 import { UnblockAccountComponent } from './unblock-account/unblock-account.component';
 
 const routes: Routes = [
+  { path: '', component: LoginComponent },
   { path: 'login', component: LoginComponent },
+  { path: 'conheca', component: ConhecaComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'forgot-password', component: ForgotPasswordComponent },
   { path: 'reset-password', component: ResetPasswordComponent },

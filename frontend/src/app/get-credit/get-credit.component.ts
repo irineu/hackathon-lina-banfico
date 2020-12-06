@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { AppDataService } from '../app-data.service';
+import { HttpClient } from '@angular/common/http';
+import { environment } from '../../environments/environment';
+import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 
 @Component({
   selector: 'app-get-credit',
@@ -8,10 +11,15 @@ import { AppDataService } from '../app-data.service';
 })
 export class GetCreditComponent implements OnInit {
 
-  constructor(public appData: AppDataService) { }
+  constructor(public appData: AppDataService, private http: HttpClient,private route: ActivatedRoute,
+    private router: Router) { }
 
   howMuch: number;
   parcels: number = 12;
+  codeSent = false;
+  code = "";
+  countDown = 30;
+  cdInterval;
 
   ngOnInit(): void {
     this.howMuch = this.getMax() /2;
@@ -54,6 +62,36 @@ export class GetCreditComponent implements OnInit {
       tax -= .0025;
     }
     return tax;
+  }
+
+  confirmDeal(){
+    this.http.post(`${environment.apiUrl}/services/deal/confirm`, {code: this.code}).subscribe(
+      (result) => {
+        alert("Parabens! Sua solicitacao foi enviada e embreve o valor sera creditado em sua conta");
+        this.router.navigate(['']);
+      }, (e) => {
+        console.log(e);
+        alert("Codigo invalido");
+    });
+  }
+
+  doDeal(){
+    this.http.post(`${environment.apiUrl}/services/deal`, {amount: this.howMuch, parcels: this.parcels}).subscribe(
+      (result) => {
+        this.codeSent = true;
+        this.countDown = 30;
+
+        this.cdInterval = setInterval(() => {
+          this.countDown--;
+          if(this.countDown == 0){
+            clearInterval(this.cdInterval);
+            this.codeSent = false;
+          }
+        }, 1000);
+      }, (e) => {
+        console.log(e);
+        alert("Erro desconhecido");
+    });
   }
 
 }

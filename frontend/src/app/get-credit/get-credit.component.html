@@ -32,5 +32,12 @@
     <br>
     <span class="juros">Juros: {{100 * getTax() | number : '.2-2'}} a.m</span>
     <br><br><br>
-    <button >Contratar</button>
+    <div *ngIf="codeSent">
+        <p>Digite o codigo de confirmacao enviado para seu celular:</p>
+        <input style="width: 25%" type="text"  [(ngModel)]="code"/> &nbsp;&nbsp;
+        <button (click)="confirmDeal()" [disabled]="code.length < 4">Enviar</button>
+        <br/>
+        <span>Voce podera solicitar um novo codigo em {{countDown}}</span>
+    </div>
+    <button (click)="doDeal()" *ngIf="!codeSent" >Contratar</button>
 </div>

@@ -19,7 +19,7 @@ export default {
     
             const params = {
                 PhoneNumber: "+55"+to,
-                Message: `RESOLVE-HOJE: Use o codigo ${code} para validar sua conta`,
+                Message: `RESOLVE-HOJE: Use o codigo ${code} para assinar a contratacao`,
                 MessageStructure: 'string'
             }
     

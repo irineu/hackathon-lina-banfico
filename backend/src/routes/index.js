@@ -7,6 +7,7 @@ import accountPassword from './services/accountPasswordService.js';
 import echo from './services/echo.js';
 import user from './services/userService.js';
 import bank from './services/bankService.js';
+import deal from './services/dealService.js';
 import fs from 'fs';
 
 import httpUtils from '../util/http.js';
@@ -24,6 +25,7 @@ export default {
         global.httpServer.use('/services/account-password', accountPassword);
         global.httpServer.use('/services/user', user);
         global.httpServer.use('/services/bank', bank);
+        global.httpServer.use('/services/deal', deal);
 
         global.httpServer.use('/services/echo', echo);  
         

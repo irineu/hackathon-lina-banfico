@@ -19,12 +19,14 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { httpInterceptorProviders } from './interceptors';
 import { AddAccountComponent } from './add-account/add-account.component';
 import { GetCreditComponent } from './get-credit/get-credit.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AddAccountComponent,
-    GetCreditComponent
+    GetCreditComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
